@@ -47,6 +47,11 @@ const myDog = async () => {
   }
 };
 
+const h2 = document.createElement("h2");
+const h2Text = document.createTextNode('Favorite Dogs');
+h2.append(h2Text);
+h2.setAttribute('style','text-align:center; margin-top: 30px; font-size: 30px; color: #9772FB');
+
 //* LOAD FAVORITE DOGS
 const favoriteDogs = async () => {
   const res = await fetch(API_URL_FAVORITES);
@@ -57,13 +62,10 @@ const favoriteDogs = async () => {
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un error: " + res.status + data.message;
   } else {
-    const h2 = document.createElement("h2");
-    const h2Text = document.createTextNode('Favorite Dogs');
-    h2.append(h2Text);
-    h2.setAttribute('style','text-align:center; margin-top: 30px; font-size: 30px; color: #9772FB')
+
 
     const section = document.getElementById("favorite__images");
-    section.setAttribute('style','display:grid; grid-template-columns: repeat(3, auto); grid-template-rows: repeat(3, auto); object-fit: cover;place-content: center;grid-auto-flow: row;margin-top: 4.5rem;gap: 1.2rem; @media (max-width: 500px) { .main__container{ display: grid;grid-template-columns: repeat(2, auto);grid-template-rows: repeat(2, auto);gap: 0.8rem;} img {max-width: 16rem;height: 16rem;border-radius: 5px;}}')
+    section.setAttribute('style','display:grid; grid-template-columns: repeat(3, auto); grid-template-rows: repeat(3, auto); object-fit: cover;place-content: center;grid-auto-flow: row;margin-top: 4.5rem;gap: 1.2rem; @media(max-width: 500px) { .main__container{ display: grid;grid-template-columns: repeat(2, auto);grid-template-rows: repeat(2, auto);gap: 0.8rem;} img {max-width: 16rem;height: 16rem;border-radius: 5px;}}')
     section.innerHTML = "";
 
     section.insertAdjacentElement('beforebegin',h2);
