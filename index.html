@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <script src="https://kit.fontawesome.com/fdec35d4ef.js" crossorigin="anonymous"></script>    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
@@ -15,17 +15,53 @@
   </head>
   <body>
     <header>
-      <h1 class="title">Random Dogs</h1>
+      <span id="error"></span>
+      <h1 class="title">The Dog API</h1>
+
     </header>
     <section class="main__container">
-      <img id="ramdom-dog" alt="foto perrito aleatorio" class="rounded-md" />
-      <img id="ramdom-dog2" alt="foto perrito aleatorio" class="rounded-md" />
-      <img id="ramdom-dog3" alt="foto perrito aleatorio" class="rounded-md" />
-      <img id="ramdom-dog4" alt="foto perrito aleatorio" class="rounded-md" />
-      <img id="ramdom-dog5" alt="foto perrito aleatorio" class="rounded-md" />
-      <img id="ramdom-dog6" alt="foto perrito aleatorio" class="rounded-md" />
+
+      <article>
+        <img id="ramdom-dog" alt="foto perrito aleatorio" class="rounded-md">
+        <button id='random__button1'class="like__button">Like</button>
+      </article>
+
+      <article>
+        <img id="ramdom-dog2" alt="foto perrito aleatorio" class="rounded-md" />
+        <button id='random__button2'class="like__button">Like</button>
+      </article>
+
+      <article>
+        <img id="ramdom-dog3" alt="foto perrito aleatorio" class="rounded-md" />
+        <button id='random__button3'class="like__button">Like</button>
+      </article>
+
+      <article>
+        <img id="ramdom-dog4" alt="foto perrito aleatorio" class="rounded-md" />
+        <button id='random__button4'class="like__button">Like</button>
+      </article>
+
+      <article>
+        <img id="ramdom-dog5" alt="foto perrito aleatorio" class="rounded-md" />
+        <button id='random__button5'class="like__button">Like</button>
+      </article>
+
+      <article>
+        <img id="ramdom-dog6" alt="foto perrito aleatorio" class="rounded-md" />
+        <button id='random__button6'class="like__button">Like</button>
+      </article>
+
     </section>
     <button class='update__btn'onclick="myDog()">Actualizame</button>
+
+    <!-- ? Section favorites -->
+    <section id="favorite__images">
+      <!-- <h2>Favorite Dogs</h2> -->
+      <!-- <article id="favorite__images--content"> -->
+        <!-- <img src="img1" alt="foto perrito aleatoria"> -->
+        <!-- <button>Sacar al perrito de favoritos</button> -->
+      </article>
+    </section>
 
     <script src="../main.js"></script>
   </body>
