@@ -57,19 +57,23 @@ const favoriteDogs = async () => {
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un error: " + res.status + data.message;
   } else {
+    const h2 = document.createElement("h2");
+    const h2Text = document.createTextNode('Favorite Dogs');
+    h2.append(h2Text);
+    h2.setAttribute('style','text-align:center; margin-top: 30px; font-size: 30px; color: #9772FB')
+
     const section = document.getElementById("favorite__images");
+    section.setAttribute('style','display:grid; grid-template-columns: repeat(3, auto); grid-template-rows: repeat(3, auto); object-fit: cover;place-content: center;grid-auto-flow: row;margin-top: 4.5rem;gap: 1.2rem; @media (max-width: 500px) { .main__container{ display: grid;grid-template-columns: repeat(2, auto);grid-template-rows: repeat(2, auto);gap: 0.8rem;} img {max-width: 16rem;height: 16rem;border-radius: 5px;}}')
     section.innerHTML = "";
 
-    const h2 = document.createElement("h2");
-    const h2Text = document.createTextNode("FAVORITE DOGS");
-    h2.appendChild(h2Text);
-    section.appendChild(h2);
+    section.insertAdjacentElement('beforebegin',h2);
 
     data.forEach((dog) => {
       const section = document.getElementById("favorite__images");
       const article = document.createElement("article");
       const img = document.createElement("img");
       const btn = document.createElement("button");
+      btn.setAttribute('style','display:flex;font-family: "Montserrat", sans-serif;font-weight: 700;font-size: 1.rem;width: 100%;height: 31px;border: 1px solid #D99191;background-color: transparent;border-radius: 8px;justify-content: center;align-items: center;cursor: pointer;color: red;');
       const btnText = document.createTextNode("Delete Dog Favorites");
 
       img.src = dog.image.url;
